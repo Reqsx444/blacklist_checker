@@ -2,6 +2,10 @@ import pydnsbl
 import ipaddress
 import asyncio
 import time
+import os
+
+#Usuwanie poprzedniego pliku
+os.system("rm -rf ./BLresult.txt")
 
 # Importujemy wymagane biblioteki/moduły
 from pydnsbl.providers import BASE_PROVIDERS
@@ -20,8 +24,10 @@ def get_ip_addresses(prefixes):
         addresses.extend([str(ip) for ip in network.hosts()])
     return addresses
 
-prefixes = ["91.224.60.0/23"]
+prefixes = ["89.40.144.0/22", "185.11.128.0/22"]
 addresses = get_ip_addresses(prefixes)
+
+
 
 address_list = []
 for address in addresses:
