@@ -67,3 +67,19 @@ async def main():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 loop.close()
+
+#Usuwanie [unknown]
+def remove_unknown(file_path, unknown, nth):
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    content = content.replace(unknown, nth)
+
+    with open(file_path, 'w') as file:
+        file.write(content)
+
+file_path = 'BLresult.txt'
+unknown = ": ['unknown']"
+nth = ""
+
+remove_unknown(file_path, unknown, nth)
