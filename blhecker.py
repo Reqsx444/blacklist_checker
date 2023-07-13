@@ -27,8 +27,6 @@ def get_ip_addresses(prefixes):
 prefixes = ["89.40.144.0/22", "185.11.128.0/22"]
 addresses = get_ip_addresses(prefixes)
 
-
-
 address_list = []
 for address in addresses:
     address_list.append(address)
