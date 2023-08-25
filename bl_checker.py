@@ -1,7 +1,3 @@
-__author__ = "Damian Golał"
-__version__ = "1.0.1"
-__email__ = "reqsx4@gmail.com"
-__status__ = "Production"
 import pydnsbl
 import ipaddress
 import asyncio
