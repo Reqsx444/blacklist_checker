@@ -13,13 +13,16 @@ Result Logging: Saves the results of IP address checks to a log file, removing e
 ### Prerequisites:
 - Python 3
 - Libraries: pydnsbl, ipaddress, asyncio, time, os
-- 
-## Example Usage
-python ip_blacklist_checker.py
 
+## Example Usage
+```
+python ip_blacklist_checker.py
+```
 ### BUG
 An enhancement worth considering from the outset is to display the BL in the final output file and not display addresses that do not appear on the BL. To achieve this, modify the following function in the file /usr/local/lib/python3.9/dist-packages/pydnsbl/checker.py:
+```
     def __repr__(self):\
         blacklisted = '[BLACKLISTED]' if self.blacklisted else ''\
         return "<DNSBLResult: %s %s %s (%d/%d)>" % (self.addr, blacklisted, self.detected_by , len(self.detected_by),\
                                                  len(self.providers))\
+```
